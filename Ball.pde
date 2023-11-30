@@ -5,7 +5,7 @@ class Ball{
   
   Ball(){
     //initialize variables for starting position and movement of ball
-    position = new PVector(width/2,360);
+    position = new PVector(width/2,354);
     velocity = new PVector(2.5,-2);
   }
   
@@ -38,5 +38,14 @@ class Ball{
   void caught(){
     velocity.x = velocity.x * -1;
     velocity.y = velocity.y * -1;
+  }
+  
+  boolean intersect(Dot dots){
+    float distance = dist(dots.x,dots.y,position.x,position.y);
+    if (distance < 15 + 15){
+      return true;
+    } else{
+      return false;
+    }
   }
 }
