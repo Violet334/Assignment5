@@ -5,8 +5,11 @@ Heading h;
 Plank p;
 Ball b;
 Dot[] dots = new Dot[19];
+//declare the score
+int score;
 //declare boolean for whether the ball has been launched
 boolean shoot;
+
 
 void setup(){
   size(400,400);
@@ -14,10 +17,15 @@ void setup(){
   h = new Heading();
   p = new Plank();
   b = new Ball();
+  //set score to 0
+  score = 0;
+  //initialize array
   for(int i = 0;i < dots.length;i++){
     dots[i] = new Dot(i*20+20,60,15,100);
   }
+  //set shoot to false
   shoot = false;
+
 }
 
 void draw(){
@@ -45,6 +53,7 @@ void draw(){
     //function when ball hits dots
     if(b.intersect(dots[i])){
       dots[i].hit();
+      
     }
   }
 }

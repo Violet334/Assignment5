@@ -26,5 +26,6 @@ class Dot{
   
   void hit(){
     c = 255;
+
   }
 }
