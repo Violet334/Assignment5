@@ -52,8 +52,8 @@ void draw(){
     dots[i].display();
     //function when ball hits dots
     if(b.intersect(dots[i])){
+      dots[i].score();
       dots[i].hit();
-      
     }
   }
 }

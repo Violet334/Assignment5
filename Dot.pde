@@ -26,6 +26,11 @@ class Dot{
   
   void hit(){
     c = 255;
-
+  }
+  
+  void score(){
+    if(c!= 255){
+      score = score + 1;
+    }
   }
 }

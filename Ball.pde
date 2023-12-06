@@ -30,7 +30,7 @@ class Ball{
     if((position.x > width)||(position.x < 0)){
       velocity.x = velocity.x * -1;
     } //ball doesn't travel beyond top of screen
-    if(position.y < 0){
+    if(position.y < 40 + 15){
       velocity.y = velocity.y * -1;
     }
   }
