@@ -6,7 +6,7 @@ class Ball{
   Ball(){
     //initialize variables for starting position and movement of ball
     position = new PVector(width/2,354);
-    velocity = new PVector(2.5,-2);
+    velocity = new PVector(0.8,-3);
   }
   
   void display(){
@@ -27,7 +27,7 @@ class Ball{
   
   void bounce(){
     //ball stays within sides of screen
-    if((position.x > width)||(position.x < 0)){
+    if((position.x + 15 > width)||(position.x - 15 < 0)){
       velocity.x = velocity.x * -1;
     } //ball doesn't travel beyond top of screen
     if(position.y < 40 + 15){
@@ -36,7 +36,7 @@ class Ball{
   }
   //ball bounces off plank
   void caught(){
-    velocity.x = velocity.x * -1;
+    //velocity.x = velocity.x * -1;
     velocity.y = velocity.y * -1;
   }
   

@@ -31,6 +31,9 @@ class Dot{
   void score(){
     if(c!= 255){
       score = score + 1;
+      if (score == 76){
+        gameState = 2;
+      }
     }
   }
 }
