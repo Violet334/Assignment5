@@ -11,6 +11,7 @@ Heading h;
 Plank p;
 Ball b;
 Dot[] dots = new Dot[76];
+Confetti[] confetti = new Confetti[15];
 ArrayList<Reserve> rlist = new ArrayList<Reserve>();
 
 void setup(){
@@ -28,6 +29,9 @@ void setup(){
     float x = i % 19;
     int y = i / 19;
     dots[i] = new Dot(x*20+20,60+y*30,15,100);
+  }
+  for(int i = 0;i < confetti.length;i++){
+    confetti[i] = new Confetti();
   }
   for(int i = 0;i < 3;i++){
     rlist.add(new Reserve(i*-40+60,382));
@@ -82,6 +86,10 @@ void draw(){
     textSize(50);
     fill(255,200,0);
     text("Victory",width/2-80,height/2+40);
+    for(int i=0;i < confetti.length;i++){
+      confetti[i].display();
+      confetti[i].move();
+    }
     break;
     
     case 3:
