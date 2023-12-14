@@ -23,6 +23,15 @@ class Ball{
   void move2(){
     //ball moves independently once shot
     position = position.add(velocity);
+    
+    if(position.y > 450) {
+      position.x = mouseX;
+      position.y = 354;
+      rlist.remove(0);
+      if(rlist.size()==0){
+        gameState = 3;
+      }
+    }
   }
   
   void bounce(){

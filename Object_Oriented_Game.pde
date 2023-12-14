@@ -15,6 +15,7 @@ ArrayList<Reserve> rlist = new ArrayList<Reserve>();
 
 void setup(){
   size(400,400);
+  println("click to shoot");
   //initialize objects
   h = new Heading();
   p = new Plank();
@@ -28,8 +29,8 @@ void setup(){
     int y = i / 19;
     dots[i] = new Dot(x*20+20,60+y*30,15,100);
   }
-  for(int i = 0;i < 2;i++){
-    rlist.add(new Reserve(i*40 + 20, 382));
+  for(int i = 0;i < 3;i++){
+    rlist.add(new Reserve(i*-40+60,382));
   }
   //set shoot to false
   shoot = false;
@@ -77,12 +78,14 @@ void draw(){
     break;
     
     case 2:
+    h.display();
     textSize(50);
     fill(255,200,0);
-    text("Victory",width/2-80,height/2);
+    text("Victory",width/2-80,height/2+40);
     break;
     
     case 3:
+    background(0);
     textSize(50);
     fill(155,0,0);
     text("Game Over",width/2-110,height/2);
